@@ -1,0 +1,53 @@
+{
+  "name": "figma2flutter",
+  "version": "1.0.0",
+  "description": "Figma to Flutter TDD pipeline - converts Figma designs to production Flutter code",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "esbuild src/plugin/main.ts --bundle --outfile=dist/main.js --target=es6 --format=iife",
+    "build:watch": "npm run build -- --watch",
+    "build:cli": "esbuild src/cli/convert.ts --bundle --outfile=dist/cli.js --platform=node --target=node18 --format=cjs",
+    "build:verify": "esbuild src/cli/verify-visual.ts --bundle --outfile=dist/verify-visual.js --platform=node --target=node18 --format=cjs",
+    "convert": "node dist/cli.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint --ext .ts src/ test/",
+    "lint:fix": "eslint --ext .ts --fix src/ test/",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@figma/eslint-plugin-figma-plugins": "*",
+    "@figma/plugin-typings": "*",
+    "@types/node": "^25.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2",
+    "vitest": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@figma/figma-plugins/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "root": true,
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "caughtErrorsIgnorePattern": "^_"
+        }
+      ]
+    }
+  }
+}
