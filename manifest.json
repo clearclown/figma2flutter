@@ -1,0 +1,41 @@
+{
+  "name": "figma2flutter",
+  "id": "1611289867962397414",
+  "api": "1.0.0",
+  "main": "dist/main.js",
+  "capabilities": [
+    "codegen"
+  ],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic-page",
+  "editorType": [
+    "dev"
+  ],
+  "ui": "ui.html",
+  "codegenLanguages": [
+    {
+      "label": "Flutter/Dart",
+      "value": "flutter"
+    },
+    {
+      "label": "IR (JSON)",
+      "value": "ir-json"
+    }
+  ],
+  "codegenPreferences": [
+    {
+      "itemType": "select",
+      "propertyName": "screenshots",
+      "label": "Include Screenshots",
+      "options": [
+        { "label": "No", "value": "false", "isDefault": true },
+        { "label": "Yes (@2x PNG)", "value": "true" }
+      ]
+    }
+  ],
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}
