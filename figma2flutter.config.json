@@ -1,0 +1,25 @@
+{
+  "targetFlutterProject": "~/Projects/tabechao/mobile",
+  "generatedDir": "lib/generated",
+  "testDir": "test/golden/generated",
+  "goldenDir": "test/goldens/ci",
+  "tokenConfig": {
+    "colorClassName": "DesignTokens",
+    "colorImport": "package:mobile/core/theme/design_tokens.dart",
+    "typographyClassName": "DesignTokens",
+    "typographyImport": "package:mobile/core/theme/design_tokens.dart",
+    "spacingClassName": "DesignTokens",
+    "spacingImport": "package:mobile/core/theme/design_tokens.dart",
+    "generateTokenFiles": false
+  },
+  "screenshotConfig": {
+    "scale": 2,
+    "referenceDir": "test/goldens/figma_ref",
+    "tolerance": 0.03
+  },
+  "verificationConfig": {
+    "enabled": true,
+    "anthropicModel": "claude-sonnet-4-20250514",
+    "autoVerifyOnFailure": true
+  }
+}
