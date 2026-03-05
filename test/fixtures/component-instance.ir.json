@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "6:1",
+    "figmaNodeName": "PrimaryButton",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "primary/500": { "r": 0.231, "g": 0.510, "b": 0.965, "a": 1 },
+      "text/on-primary": { "r": 1, "g": 1, "b": 1, "a": 1 }
+    },
+    "typography": {
+      "label/md": {
+        "fontFamily": "Inter",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "6:1",
+    "name": "PrimaryButton",
+    "type": "COMPONENT",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 120, "height": 44 },
+    "componentKey": "btn-primary-001",
+    "layout": {
+      "mode": "HORIZONTAL",
+      "primaryAxisAlign": "CENTER",
+      "counterAxisAlign": "CENTER",
+      "primaryAxisSizing": "HUG",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 12, "right": 24, "bottom": 12, "left": 24 },
+      "itemSpacing": 8,
+      "wrap": false
+    },
+    "style": {
+      "fills": [
+        { "type": "SOLID", "colorRef": "primary/500", "opacity": 1 }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 8, "topRight": 8, "bottomRight": 8, "bottomLeft": 8 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "6:2",
+        "name": "Label",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 72, "height": 20 },
+        "characters": "Get Started",
+        "typographyRef": "label/md",
+        "colorRef": "text/on-primary",
+        "textAlign": "CENTER",
+        "verticalAlign": "CENTER"
+      }
+    ]
+  }
+}

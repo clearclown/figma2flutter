@@ -1,0 +1,41 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "2:1",
+    "figmaNodeName": "Title Text",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "text/primary": { "r": 0, "g": 0, "b": 0, "a": 1 }
+    },
+    "typography": {
+      "heading/lg": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 700,
+        "fontSize": 24,
+        "lineHeight": { "unit": "PIXELS", "value": 32 },
+        "letterSpacing": { "unit": "PIXELS", "value": -0.408 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "2:1",
+    "name": "Title Text",
+    "type": "TEXT",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 300, "height": 32 },
+    "characters": "おすすめのお店",
+    "typographyRef": "heading/lg",
+    "colorRef": "text/primary",
+    "textAlign": "LEFT",
+    "verticalAlign": "TOP"
+  }
+}

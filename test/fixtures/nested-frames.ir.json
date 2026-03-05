@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "5:1",
+    "figmaNodeName": "Card Content",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "text/primary": { "r": 0, "g": 0, "b": 0, "a": 1 },
+      "text/secondary": { "r": 0.5, "g": 0.5, "b": 0.5, "a": 1 }
+    },
+    "typography": {
+      "heading/md": {
+        "fontFamily": "Inter",
+        "fontWeight": 700,
+        "fontSize": 18,
+        "lineHeight": { "unit": "PIXELS", "value": 24 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      },
+      "body/sm": {
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 13,
+        "lineHeight": { "unit": "PIXELS", "value": 18 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "5:1",
+    "name": "Card Content",
+    "type": "FRAME",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 300, "height": 80 },
+    "layout": {
+      "mode": "VERTICAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "STRETCH",
+      "primaryAxisSizing": "HUG",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+      "itemSpacing": 12,
+      "wrap": false
+    },
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "5:2",
+        "name": "Title",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 300, "height": 24 },
+        "characters": "Section Title",
+        "typographyRef": "heading/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      },
+      {
+        "id": "5:3",
+        "name": "Actions Row",
+        "type": "FRAME",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 300, "height": 32 },
+        "layout": {
+          "mode": "HORIZONTAL",
+          "primaryAxisAlign": "END",
+          "counterAxisAlign": "CENTER",
+          "primaryAxisSizing": "FIXED",
+          "counterAxisSizing": "FIXED",
+          "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+          "itemSpacing": 8,
+          "wrap": false
+        },
+        "style": {
+          "fills": [],
+          "strokes": [],
+          "effects": [],
+          "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+        },
+        "clipsContent": false,
+        "children": [
+          {
+            "id": "5:4",
+            "name": "Edit",
+            "type": "TEXT",
+            "visible": true,
+            "opacity": 1,
+            "rotation": 0,
+            "size": { "width": 50, "height": 18 },
+            "characters": "Edit",
+            "typographyRef": "body/sm",
+            "colorRef": "text/secondary",
+            "textAlign": "LEFT",
+            "verticalAlign": "TOP"
+          },
+          {
+            "id": "5:5",
+            "name": "Delete",
+            "type": "TEXT",
+            "visible": true,
+            "opacity": 1,
+            "rotation": 0,
+            "size": { "width": 50, "height": 18 },
+            "characters": "Delete",
+            "typographyRef": "body/sm",
+            "colorRef": "text/secondary",
+            "textAlign": "LEFT",
+            "verticalAlign": "TOP"
+          }
+        ]
+      }
+    ]
+  }
+}

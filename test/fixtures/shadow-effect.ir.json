@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "14:1",
+    "figmaNodeName": "ShadowCard",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "surface/card": { "r": 1, "g": 1, "b": 1, "a": 1 },
+      "shadow/md": { "r": 0, "g": 0, "b": 0, "a": 0.15 },
+      "text/primary": { "r": 0.067, "g": 0.067, "b": 0.067, "a": 1 }
+    },
+    "typography": {
+      "body/md": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 400,
+        "fontSize": 14,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "14:1",
+    "name": "ShadowCard",
+    "type": "RECTANGLE",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 200, "height": 100 },
+    "style": {
+      "fills": [
+        { "type": "SOLID", "colorRef": "surface/card", "opacity": 1 }
+      ],
+      "strokes": [],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "shadowRef": "shadow/md",
+          "blurRadius": 8
+        }
+      ],
+      "borderRadius": { "topLeft": 12, "topRight": 12, "bottomRight": 12, "bottomLeft": 12 }
+    }
+  }
+}

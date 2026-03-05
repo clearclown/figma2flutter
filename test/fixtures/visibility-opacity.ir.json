@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "13:1",
+    "figmaNodeName": "VisibilityTest",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "primary/500": { "r": 0.231, "g": 0.510, "b": 0.965, "a": 1 },
+      "text/primary": { "r": 0.067, "g": 0.067, "b": 0.067, "a": 1 }
+    },
+    "typography": {
+      "body/md": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 400,
+        "fontSize": 14,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "13:1",
+    "name": "VisibilityTest",
+    "type": "FRAME",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 200, "height": 100 },
+    "layout": {
+      "mode": "VERTICAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "START",
+      "primaryAxisSizing": "HUG",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+      "itemSpacing": 8,
+      "wrap": false
+    },
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "13:2",
+        "name": "VisibleText",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 200, "height": 20 },
+        "characters": "Visible",
+        "typographyRef": "body/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      },
+      {
+        "id": "13:3",
+        "name": "HiddenText",
+        "type": "TEXT",
+        "visible": false,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 200, "height": 20 },
+        "characters": "Hidden",
+        "typographyRef": "body/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      },
+      {
+        "id": "13:4",
+        "name": "SemiTransparent",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 0.5,
+        "rotation": 0,
+        "size": { "width": 200, "height": 20 },
+        "characters": "Semi-transparent",
+        "typographyRef": "body/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      }
+    ]
+  }
+}

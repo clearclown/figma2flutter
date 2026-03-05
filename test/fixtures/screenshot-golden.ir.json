@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "20:1",
+    "figmaNodeName": "Screenshot Card",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "color/surface": { "r": 1, "g": 1, "b": 1, "a": 1 }
+    },
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "20:1",
+    "name": "Screenshot Card",
+    "type": "COMPONENT",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 200, "height": 100 },
+    "componentKey": "screenshot-card-key",
+    "layout": {
+      "mode": "VERTICAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "START",
+      "primaryAxisSizing": "FIXED",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+      "itemSpacing": 0,
+      "wrap": false
+    },
+    "style": {
+      "fills": [{ "type": "SOLID", "colorRef": "color/surface", "opacity": 1 }],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "clipsContent": false,
+    "children": []
+  },
+  "screenshots": {
+    "root": {
+      "nodeId": "20:1",
+      "nodeName": "Screenshot Card",
+      "scale": 2,
+      "width": 400,
+      "height": 200,
+      "base64": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+    }
+  }
+}

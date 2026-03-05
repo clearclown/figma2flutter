@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "8:1",
+    "figmaNodeName": "Hero Image",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {},
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "8:1",
+    "name": "Hero Image",
+    "type": "IMAGE",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 300, "height": 200 },
+    "imageRef": "hero-image",
+    "scaleMode": "FILL",
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 12, "topRight": 12, "bottomRight": 0, "bottomLeft": 0 }
+    }
+  }
+}

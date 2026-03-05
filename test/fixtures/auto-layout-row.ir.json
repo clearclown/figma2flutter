@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "4:1",
+    "figmaNodeName": "Button Row",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "text/primary": { "r": 0, "g": 0, "b": 0, "a": 1 }
+    },
+    "typography": {
+      "body/md": {
+        "fontFamily": "Inter",
+        "fontWeight": 400,
+        "fontSize": 15,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "4:1",
+    "name": "Button Row",
+    "type": "FRAME",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 350, "height": 40 },
+    "layout": {
+      "mode": "HORIZONTAL",
+      "primaryAxisAlign": "SPACE_BETWEEN",
+      "counterAxisAlign": "CENTER",
+      "primaryAxisSizing": "FIXED",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+      "itemSpacing": 12,
+      "wrap": false
+    },
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "4:2",
+        "name": "Label",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 100, "height": 20 },
+        "characters": "Cancel",
+        "typographyRef": "body/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      },
+      {
+        "id": "4:3",
+        "name": "Label 2",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 100, "height": 20 },
+        "characters": "Confirm",
+        "typographyRef": "body/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "10:2",
+    "figmaNodeName": "Arrow Right",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {},
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "10:2",
+    "name": "Arrow Right",
+    "type": "VECTOR",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 16, "height": 16 },
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "vectorPaths": [
+      {
+        "windingRule": "NONZERO",
+        "data": "M5 3L12 8L5 13Z"
+      }
+    ]
+  }
+}

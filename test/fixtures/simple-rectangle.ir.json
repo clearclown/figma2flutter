@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "1:2",
+    "figmaNodeName": "Blue Rectangle",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "primary/500": { "r": 0.231, "g": 0.51, "b": 0.965, "a": 1 }
+    },
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "1:2",
+    "name": "Blue Rectangle",
+    "type": "RECTANGLE",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 200, "height": 100 },
+    "style": {
+      "fills": [
+        {
+          "type": "SOLID",
+          "colorRef": "primary/500",
+          "opacity": 1
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": {
+        "topLeft": 8,
+        "topRight": 8,
+        "bottomRight": 8,
+        "bottomLeft": 8
+      }
+    }
+  }
+}

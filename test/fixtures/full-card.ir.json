@@ -1,0 +1,235 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "10:1",
+    "figmaNodeName": "RestaurantCard",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "surface/card": { "r": 1, "g": 1, "b": 1, "a": 1 },
+      "text/primary": { "r": 0.067, "g": 0.067, "b": 0.067, "a": 1 },
+      "text/secondary": { "r": 0.467, "g": 0.467, "b": 0.467, "a": 1 },
+      "text/on-primary": { "r": 1, "g": 1, "b": 1, "a": 1 },
+      "primary/500": { "r": 0.231, "g": 0.510, "b": 0.965, "a": 1 }
+    },
+    "typography": {
+      "heading/lg": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 700,
+        "fontSize": 20,
+        "lineHeight": { "unit": "PIXELS", "value": 28 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      },
+      "body/md": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 400,
+        "fontSize": 14,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      },
+      "label/md": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 600,
+        "fontSize": 14,
+        "lineHeight": { "unit": "PIXELS", "value": 20 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "10:1",
+    "name": "RestaurantCard",
+    "type": "COMPONENT",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 343, "height": 320 },
+    "componentKey": "restaurant-card-001",
+    "layout": {
+      "mode": "VERTICAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "STRETCH",
+      "primaryAxisSizing": "HUG",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 0, "right": 0, "bottom": 16, "left": 0 },
+      "itemSpacing": 0,
+      "wrap": false
+    },
+    "style": {
+      "fills": [
+        { "type": "SOLID", "colorRef": "surface/card", "opacity": 1 }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 16, "topRight": 16, "bottomRight": 16, "bottomLeft": 16 }
+    },
+    "clipsContent": true,
+    "children": [
+      {
+        "id": "10:2",
+        "name": "Hero Image",
+        "type": "IMAGE",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 343, "height": 180 },
+        "imageRef": "restaurant-hero",
+        "scaleMode": "FILL",
+        "style": {
+          "fills": [],
+          "strokes": [],
+          "effects": [],
+          "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+        }
+      },
+      {
+        "id": "10:3",
+        "name": "Content",
+        "type": "FRAME",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 343, "height": 124 },
+        "layout": {
+          "mode": "VERTICAL",
+          "primaryAxisAlign": "START",
+          "counterAxisAlign": "STRETCH",
+          "primaryAxisSizing": "HUG",
+          "counterAxisSizing": "FIXED",
+          "padding": { "top": 12, "right": 16, "bottom": 0, "left": 16 },
+          "itemSpacing": 8,
+          "wrap": false
+        },
+        "style": {
+          "fills": [],
+          "strokes": [],
+          "effects": [],
+          "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+        },
+        "clipsContent": false,
+        "children": [
+          {
+            "id": "10:4",
+            "name": "Title",
+            "type": "TEXT",
+            "visible": true,
+            "opacity": 1,
+            "rotation": 0,
+            "size": { "width": 311, "height": 28 },
+            "characters": "トラットリア・ダ・フェリーチェ",
+            "typographyRef": "heading/lg",
+            "colorRef": "text/primary",
+            "textAlign": "LEFT",
+            "verticalAlign": "TOP"
+          },
+          {
+            "id": "10:5",
+            "name": "Subtitle",
+            "type": "TEXT",
+            "visible": true,
+            "opacity": 1,
+            "rotation": 0,
+            "size": { "width": 311, "height": 20 },
+            "characters": "渋谷区 • イタリアン • ¥¥",
+            "typographyRef": "body/md",
+            "colorRef": "text/secondary",
+            "textAlign": "LEFT",
+            "verticalAlign": "TOP"
+          },
+          {
+            "id": "10:6",
+            "name": "Actions",
+            "type": "FRAME",
+            "visible": true,
+            "opacity": 1,
+            "rotation": 0,
+            "size": { "width": 311, "height": 44 },
+            "layout": {
+              "mode": "HORIZONTAL",
+              "primaryAxisAlign": "SPACE_BETWEEN",
+              "counterAxisAlign": "CENTER",
+              "primaryAxisSizing": "FIXED",
+              "counterAxisSizing": "FIXED",
+              "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+              "itemSpacing": 8,
+              "wrap": false
+            },
+            "style": {
+              "fills": [],
+              "strokes": [],
+              "effects": [],
+              "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+            },
+            "clipsContent": false,
+            "children": [
+              {
+                "id": "10:7",
+                "name": "Rating",
+                "type": "TEXT",
+                "visible": true,
+                "opacity": 1,
+                "rotation": 0,
+                "size": { "width": 60, "height": 20 },
+                "characters": "★ 4.5",
+                "typographyRef": "body/md",
+                "colorRef": "text/primary",
+                "textAlign": "LEFT",
+                "verticalAlign": "CENTER"
+              },
+              {
+                "id": "10:8",
+                "name": "BookButton",
+                "type": "FRAME",
+                "visible": true,
+                "opacity": 1,
+                "rotation": 0,
+                "size": { "width": 80, "height": 36 },
+                "layout": {
+                  "mode": "HORIZONTAL",
+                  "primaryAxisAlign": "CENTER",
+                  "counterAxisAlign": "CENTER",
+                  "primaryAxisSizing": "FIXED",
+                  "counterAxisSizing": "FIXED",
+                  "padding": { "top": 8, "right": 16, "bottom": 8, "left": 16 },
+                  "itemSpacing": 0,
+                  "wrap": false
+                },
+                "style": {
+                  "fills": [
+                    { "type": "SOLID", "colorRef": "primary/500", "opacity": 1 }
+                  ],
+                  "strokes": [],
+                  "effects": [],
+                  "borderRadius": { "topLeft": 8, "topRight": 8, "bottomRight": 8, "bottomLeft": 8 }
+                },
+                "clipsContent": false,
+                "children": [
+                  {
+                    "id": "10:9",
+                    "name": "Book Label",
+                    "type": "TEXT",
+                    "visible": true,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "size": { "width": 48, "height": 20 },
+                    "characters": "予約する",
+                    "typographyRef": "label/md",
+                    "colorRef": "text/on-primary",
+                    "textAlign": "CENTER",
+                    "verticalAlign": "CENTER"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

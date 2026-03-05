@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "12:1",
+    "figmaNodeName": "TagList",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "surface/tag": { "r": 0.93, "g": 0.94, "b": 0.96, "a": 1 },
+      "text/primary": { "r": 0.067, "g": 0.067, "b": 0.067, "a": 1 }
+    },
+    "typography": {
+      "label/sm": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 500,
+        "fontSize": 12,
+        "lineHeight": { "unit": "PIXELS", "value": 16 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "12:1",
+    "name": "TagList",
+    "type": "FRAME",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 300, "height": 80 },
+    "layout": {
+      "mode": "HORIZONTAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "START",
+      "primaryAxisSizing": "FIXED",
+      "counterAxisSizing": "HUG",
+      "padding": { "top": 0, "right": 0, "bottom": 0, "left": 0 },
+      "itemSpacing": 8,
+      "wrap": true
+    },
+    "style": {
+      "fills": [],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 0, "topRight": 0, "bottomRight": 0, "bottomLeft": 0 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "12:2",
+        "name": "Tag1",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 60, "height": 16 },
+        "characters": "イタリアン",
+        "typographyRef": "label/sm",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "CENTER"
+      },
+      {
+        "id": "12:3",
+        "name": "Tag2",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 40, "height": 16 },
+        "characters": "ピザ",
+        "typographyRef": "label/sm",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "CENTER"
+      },
+      {
+        "id": "12:4",
+        "name": "Tag3",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 50, "height": 16 },
+        "characters": "パスタ",
+        "typographyRef": "label/sm",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "CENTER"
+      }
+    ]
+  }
+}
