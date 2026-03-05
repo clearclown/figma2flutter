@@ -1,0 +1,17 @@
+{
+  "description": "figma2flutter validation hooks: ensure generated Dart uses design tokens and golden tests pass",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/scripts/validate-dart-tokens.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

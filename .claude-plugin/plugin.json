@@ -1,0 +1,19 @@
+{
+  "name": "figma2flutter",
+  "version": "0.1.0",
+  "description": "Convert Figma designs to Flutter widgets through a TDD pipeline with design token extraction and golden test validation",
+  "author": {
+    "name": "ablaze"
+  },
+  "license": "MIT",
+  "keywords": [
+    "figma",
+    "flutter",
+    "dart",
+    "codegen",
+    "design-tokens",
+    "golden-tests",
+    "tdd"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

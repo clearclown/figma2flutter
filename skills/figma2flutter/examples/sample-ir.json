@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "3:1",
+    "figmaNodeName": "Card Content",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "surface/white": { "r": 1, "g": 1, "b": 1, "a": 1 },
+      "text/primary": { "r": 0, "g": 0, "b": 0, "a": 1 },
+      "text/secondary": { "r": 0.4, "g": 0.4, "b": 0.4, "a": 1 }
+    },
+    "typography": {
+      "heading/md": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 700,
+        "fontSize": 18,
+        "lineHeight": { "unit": "PIXELS", "value": 24 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      },
+      "body/sm": {
+        "fontFamily": "Noto Sans JP",
+        "fontWeight": 400,
+        "fontSize": 13,
+        "lineHeight": { "unit": "PIXELS", "value": 18 },
+        "letterSpacing": { "unit": "PIXELS", "value": 0 }
+      }
+    },
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "3:1",
+    "name": "Card Content",
+    "type": "FRAME",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 350, "height": 120 },
+    "layout": {
+      "mode": "VERTICAL",
+      "primaryAxisAlign": "START",
+      "counterAxisAlign": "STRETCH",
+      "primaryAxisSizing": "HUG",
+      "counterAxisSizing": "FIXED",
+      "padding": { "top": 16, "right": 16, "bottom": 16, "left": 16 },
+      "itemSpacing": 8,
+      "wrap": false
+    },
+    "style": {
+      "fills": [
+        { "type": "SOLID", "colorRef": "surface/white", "opacity": 1 }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": { "topLeft": 12, "topRight": 12, "bottomRight": 12, "bottomLeft": 12 }
+    },
+    "clipsContent": false,
+    "children": [
+      {
+        "id": "3:2",
+        "name": "Title",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 318, "height": 24 },
+        "characters": "Restaurant Name",
+        "typographyRef": "heading/md",
+        "colorRef": "text/primary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      },
+      {
+        "id": "3:3",
+        "name": "Description",
+        "type": "TEXT",
+        "visible": true,
+        "opacity": 1,
+        "rotation": 0,
+        "size": { "width": 318, "height": 18 },
+        "characters": "渋谷区 • イタリアン",
+        "typographyRef": "body/sm",
+        "colorRef": "text/secondary",
+        "textAlign": "LEFT",
+        "verticalAlign": "TOP"
+      }
+    ]
+  }
+}
