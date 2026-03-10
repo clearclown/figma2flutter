@@ -140,6 +140,7 @@ export interface IRFill {
   colorRef?: string;
   opacity: number;
   gradientStops?: { colorRef: string; position: number }[];
+  gradientHandlePositions?: { x: number; y: number }[];
 }
 
 export interface IRStroke {

@@ -6,6 +6,8 @@ import textNodeFixture from '../fixtures/text-node.ir.json';
 import autoLayoutColumnFixture from '../fixtures/auto-layout-column.ir.json';
 import componentInstanceFixture from '../fixtures/component-instance.ir.json';
 import stackGroupFixture from '../fixtures/stack-group.ir.json';
+import linearGradientFixture from '../fixtures/linear-gradient.ir.json';
+import radialGradientFixture from '../fixtures/radial-gradient.ir.json';
 
 describe('IR Validator', () => {
   describe('valid documents', () => {
@@ -35,6 +37,18 @@ describe('IR Validator', () => {
 
     it('validates stack-group as valid', () => {
       const result = validateIR(stackGroupFixture as unknown as IRDocument);
+      expect(result.valid).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    it('validates linear-gradient as valid', () => {
+      const result = validateIR(linearGradientFixture as unknown as IRDocument);
+      expect(result.valid).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    it('validates radial-gradient as valid', () => {
+      const result = validateIR(radialGradientFixture as unknown as IRDocument);
       expect(result.valid).toBe(true);
       expect(result.errors).toHaveLength(0);
     });
@@ -76,6 +90,52 @@ describe('IR Validator', () => {
       expect(
         result.errors.some((e) => e.code === 'MISSING_TOKEN' && e.path.includes('typographyRef')),
       ).toBe(true);
+    });
+
+    it('detects missing gradient stop color reference', () => {
+      const doc: IRDocument = {
+        version: '1.0.0',
+        metadata: {
+          sourcePluginVersion: '0.1.0',
+          figmaFileKey: 'test',
+          figmaNodeId: '1:1',
+          figmaNodeName: 'Test',
+          exportedAt: '2025-01-01T00:00:00.000Z',
+        },
+        tokens: {
+          colors: { 'existing/color': { r: 1, g: 0, b: 0, a: 1 } },
+          typography: {},
+          spacing: {},
+          radii: {},
+          shadows: {},
+        },
+        root: {
+          id: '1:1',
+          name: 'Test',
+          type: 'RECTANGLE',
+          visible: true,
+          opacity: 1,
+          rotation: 0,
+          size: { width: 100, height: 100 },
+          style: {
+            fills: [{
+              type: 'LINEAR_GRADIENT',
+              opacity: 1,
+              gradientStops: [
+                { colorRef: 'existing/color', position: 0 },
+                { colorRef: 'missing/gradient/color', position: 1 },
+              ],
+            }],
+            strokes: [],
+            effects: [],
+            borderRadius: { topLeft: 0, topRight: 0, bottomRight: 0, bottomLeft: 0 },
+          },
+        },
+      };
+
+      const result = validateIR(doc);
+      expect(result.valid).toBe(false);
+      expect(result.errors.some((e) => e.code === 'MISSING_TOKEN' && e.message.includes('missing/gradient/color'))).toBe(true);
     });
 
     it('detects missing fill color reference', () => {

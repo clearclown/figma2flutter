@@ -16,6 +16,8 @@ import shadowFixture from '../fixtures/shadow-effect.ir.json';
 import richTextFixture from '../fixtures/rich-text.ir.json';
 import vectorSvgFixture from '../fixtures/vector-svg.ir.json';
 import vectorPathsFixture from '../fixtures/vector-paths.ir.json';
+import linearGradientFixture from '../fixtures/linear-gradient.ir.json';
+import radialGradientFixture from '../fixtures/radial-gradient.ir.json';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -267,6 +269,47 @@ describe('FlutterCompiler', () => {
       const ir = vectorSvgFixture as unknown as IRDocument;
       const result = compileIR(ir);
       const expected = loadExpected('vector-svg.dart');
+      expect(result.widgetCode).toBe(expected);
+    });
+  });
+
+  describe('linear gradient', () => {
+    it('compiles a LINEAR_GRADIENT fill to LinearGradient in BoxDecoration', () => {
+      const ir = linearGradientFixture as unknown as IRDocument;
+      const result = compileIR(ir);
+      expect(result.widgetCode).toContain('LinearGradient(');
+      expect(result.widgetCode).toContain('gradient:');
+      expect(result.widgetCode).toContain('AppColors.gradientStart');
+      expect(result.widgetCode).toContain('AppColors.gradientEnd');
+      expect(result.widgetCode).toContain('Alignment.topCenter');
+      expect(result.widgetCode).toContain('Alignment.bottomCenter');
+      expect(result.widgetCode).not.toContain('color: AppColors.');
+    });
+
+    it('compiles linear gradient to exact expected output', () => {
+      const ir = linearGradientFixture as unknown as IRDocument;
+      const result = compileIR(ir);
+      const expected = loadExpected('linear-gradient.dart');
+      expect(result.widgetCode).toBe(expected);
+    });
+  });
+
+  describe('radial gradient', () => {
+    it('compiles a RADIAL_GRADIENT fill to RadialGradient in BoxDecoration', () => {
+      const ir = radialGradientFixture as unknown as IRDocument;
+      const result = compileIR(ir);
+      expect(result.widgetCode).toContain('RadialGradient(');
+      expect(result.widgetCode).toContain('gradient:');
+      expect(result.widgetCode).toContain('AppColors.glowCenter');
+      expect(result.widgetCode).toContain('AppColors.glowMid');
+      expect(result.widgetCode).toContain('AppColors.glowEdge');
+      expect(result.widgetCode).toContain('stops: [0, 0.5, 1]');
+    });
+
+    it('compiles radial gradient to exact expected output', () => {
+      const ir = radialGradientFixture as unknown as IRDocument;
+      const result = compileIR(ir);
+      const expected = loadExpected('radial-gradient.dart');
       expect(result.widgetCode).toBe(expected);
     });
   });

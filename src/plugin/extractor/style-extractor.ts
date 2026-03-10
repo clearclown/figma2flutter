@@ -43,7 +43,9 @@ function extractFills(
   if (!Array.isArray(node.fills)) return fills;
 
   for (const paint of node.fills) {
-    if (paint.type === 'SOLID' && paint.visible !== false) {
+    if (paint.visible === false) continue;
+
+    if (paint.type === 'SOLID') {
       const colorRef = tokens.registerColor(
         paint.color.r,
         paint.color.g,
@@ -55,6 +57,32 @@ function extractFills(
         colorRef,
         opacity: paint.opacity ?? 1,
       });
+    } else if (
+      (paint.type === 'GRADIENT_LINEAR' || paint.type === 'GRADIENT_RADIAL') &&
+      (paint as GradientPaint).gradientStops
+    ) {
+      const gPaint = paint as GradientPaint;
+      const gradientStops = gPaint.gradientStops.map(
+        (stop: ColorStop) => {
+          const colorRef = tokens.registerColor(
+            stop.color.r,
+            stop.color.g,
+            stop.color.b,
+            stop.color.a,
+          );
+          return { colorRef, position: Math.round(stop.position * 1000) / 1000 };
+        },
+      );
+      const irType = paint.type === 'GRADIENT_LINEAR' ? 'LINEAR_GRADIENT' : 'RADIAL_GRADIENT';
+      const fill: IRFill = {
+        type: irType,
+        opacity: paint.opacity ?? 1,
+        gradientStops,
+      };
+      if (gPaint.gradientTransform) {
+        fill.gradientHandlePositions = gradientTransformToHandles(gPaint.gradientTransform);
+      }
+      fills.push(fill);
     }
   }
 
@@ -98,6 +126,26 @@ function mapStrokeAlign(align: string | undefined): 'INSIDE' | 'OUTSIDE' | 'CENT
     default:
       return 'CENTER';
   }
+}
+
+/**
+ * Convert Figma's 2x3 gradient transform matrix to start/end handle positions.
+ * The transform maps from gradient space (0,0)-(1,0) to node space (0,0)-(1,1).
+ */
+function gradientTransformToHandles(
+  transform: Transform,
+): { x: number; y: number }[] {
+  const [[a, c, e], [b, d, f]] = transform;
+  // Start point: transform applied to (0, 0.5)
+  const startX = c * 0.5 + e;
+  const startY = d * 0.5 + f;
+  // End point: transform applied to (1, 0.5)
+  const endX = a + c * 0.5 + e;
+  const endY = b + d * 0.5 + f;
+  return [
+    { x: Math.round(startX * 1000) / 1000, y: Math.round(startY * 1000) / 1000 },
+    { x: Math.round(endX * 1000) / 1000, y: Math.round(endY * 1000) / 1000 },
+  ];
 }
 
 function extractBorderRadius(node: StylableNode): IRBorderRadius {

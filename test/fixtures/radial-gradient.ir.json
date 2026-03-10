@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "11:1",
+    "figmaNodeName": "Radial Glow",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "glow/center": { "r": 1, "g": 0.85, "b": 0, "a": 1 },
+      "glow/mid": { "r": 1, "g": 0.4, "b": 0, "a": 1 },
+      "glow/edge": { "r": 0.8, "g": 0, "b": 0, "a": 1 }
+    },
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "11:1",
+    "name": "Radial Glow",
+    "type": "RECTANGLE",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 150, "height": 150 },
+    "style": {
+      "fills": [
+        {
+          "type": "RADIAL_GRADIENT",
+          "opacity": 1,
+          "gradientStops": [
+            { "colorRef": "glow/center", "position": 0 },
+            { "colorRef": "glow/mid", "position": 0.5 },
+            { "colorRef": "glow/edge", "position": 1 }
+          ]
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": {
+        "topLeft": 0,
+        "topRight": 0,
+        "bottomRight": 0,
+        "bottomLeft": 0
+      }
+    }
+  }
+}

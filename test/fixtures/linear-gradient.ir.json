@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "sourcePluginVersion": "0.1.0",
+    "figmaFileKey": "test-file",
+    "figmaNodeId": "10:1",
+    "figmaNodeName": "Gradient Card",
+    "exportedAt": "2025-01-01T00:00:00.000Z"
+  },
+  "tokens": {
+    "colors": {
+      "gradient/start": { "r": 0.4, "g": 0.2, "b": 0.9, "a": 1 },
+      "gradient/end": { "r": 0.2, "g": 0.6, "b": 1, "a": 1 }
+    },
+    "typography": {},
+    "spacing": {},
+    "radii": {},
+    "shadows": {}
+  },
+  "root": {
+    "id": "10:1",
+    "name": "Gradient Card",
+    "type": "RECTANGLE",
+    "visible": true,
+    "opacity": 1,
+    "rotation": 0,
+    "size": { "width": 300, "height": 200 },
+    "style": {
+      "fills": [
+        {
+          "type": "LINEAR_GRADIENT",
+          "opacity": 1,
+          "gradientStops": [
+            { "colorRef": "gradient/start", "position": 0 },
+            { "colorRef": "gradient/end", "position": 1 }
+          ],
+          "gradientHandlePositions": [
+            { "x": 0.5, "y": 0 },
+            { "x": 0.5, "y": 1 }
+          ]
+        }
+      ],
+      "strokes": [],
+      "effects": [],
+      "borderRadius": {
+        "topLeft": 16,
+        "topRight": 16,
+        "bottomRight": 16,
+        "bottomLeft": 16
+      }
+    }
+  }
+}

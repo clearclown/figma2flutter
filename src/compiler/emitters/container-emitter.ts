@@ -1,6 +1,6 @@
 import { IRRectangleNode, IRBoxStyle, IRBorderRadius, IRFill, IREffect } from '../../ir/schema';
 import { tokenKeyToDartName } from '../../plugin/utils/color-utils';
-import { formatDart } from '../dart-formatter';
+import { formatDart, indent } from '../dart-formatter';
 
 export interface ContainerEmitterConfig {
   colorClassName: string;
@@ -39,14 +39,25 @@ function emitBoxDecoration(
 ): string | null {
   const props: string[] = [];
 
-  // Color from first solid fill
-  const solidFill = style.fills.find(
-    (f): f is IRFill & { colorRef: string } =>
-      f.type === 'SOLID' && f.colorRef !== undefined,
+  // Gradient fill takes precedence over solid fill
+  const gradientFill = style.fills.find(
+    (f): f is IRFill & { gradientStops: NonNullable<IRFill['gradientStops']> } =>
+      (f.type === 'LINEAR_GRADIENT' || f.type === 'RADIAL_GRADIENT') &&
+      f.gradientStops !== undefined && f.gradientStops.length > 0,
   );
-  if (solidFill) {
-    const colorName = tokenKeyToDartName(solidFill.colorRef);
-    props.push(`    color: ${config.colorClassName}.${colorName},`);
+  if (gradientFill) {
+    const gradientCode = emitGradient(gradientFill, config);
+    props.push(`    gradient: ${gradientCode},`);
+  } else {
+    // Color from first solid fill
+    const solidFill = style.fills.find(
+      (f): f is IRFill & { colorRef: string } =>
+        f.type === 'SOLID' && f.colorRef !== undefined,
+    );
+    if (solidFill) {
+      const colorName = tokenKeyToDartName(solidFill.colorRef);
+      props.push(`    color: ${config.colorClassName}.${colorName},`);
+    }
   }
 
   // Border radius
@@ -97,6 +108,70 @@ export function emitBoxShadows(
   });
 
   return `[\n${shadowCodes.join(',\n')},\n    ]`;
+}
+
+export function emitGradient(fill: IRFill, config: ContainerEmitterConfig): string {
+  const stops = fill.gradientStops!;
+  const colorsList = stops
+    .map(s => `${config.colorClassName}.${tokenKeyToDartName(s.colorRef)}`)
+    .join(', ');
+  const stopsList = stops.map(s => s.position).join(', ');
+
+  if (fill.type === 'LINEAR_GRADIENT') {
+    const { begin, end } = computeLinearAlignment(fill.gradientHandlePositions);
+    const parts: string[] = [];
+    parts.push(`LinearGradient(`);
+    parts.push(`      begin: ${begin},`);
+    parts.push(`      end: ${end},`);
+    parts.push(`      colors: [${colorsList}],`);
+    parts.push(`      stops: [${stopsList}],`);
+    parts.push(`    )`);
+    return parts.join('\n');
+  }
+
+  // RADIAL_GRADIENT
+  const parts: string[] = [];
+  parts.push(`RadialGradient(`);
+  parts.push(`      colors: [${colorsList}],`);
+  parts.push(`      stops: [${stopsList}],`);
+  parts.push(`    )`);
+  return parts.join('\n');
+}
+
+function computeLinearAlignment(
+  handles?: { x: number; y: number }[],
+): { begin: string; end: string } {
+  if (!handles || handles.length < 2) {
+    return { begin: 'Alignment.topCenter', end: 'Alignment.bottomCenter' };
+  }
+  const toAlignment = (p: { x: number; y: number }): string => {
+    // Figma handle positions are 0-1 normalized; Flutter Alignment is -1 to 1
+    const ax = +(p.x * 2 - 1).toFixed(2);
+    const ay = +(p.y * 2 - 1).toFixed(2);
+    // Use named constants for common values
+    const named = namedAlignment(ax, ay);
+    if (named) return named;
+    return `Alignment(${ax}, ${ay})`;
+  };
+  return { begin: toAlignment(handles[0]), end: toAlignment(handles[1]) };
+}
+
+function namedAlignment(x: number, y: number): string | null {
+  const map: Record<string, [number, number]> = {
+    'Alignment.topLeft': [-1, -1],
+    'Alignment.topCenter': [0, -1],
+    'Alignment.topRight': [1, -1],
+    'Alignment.centerLeft': [-1, 0],
+    'Alignment.center': [0, 0],
+    'Alignment.centerRight': [1, 0],
+    'Alignment.bottomLeft': [-1, 1],
+    'Alignment.bottomCenter': [0, 1],
+    'Alignment.bottomRight': [1, 1],
+  };
+  for (const [name, [mx, my]] of Object.entries(map)) {
+    if (x === mx && y === my) return name;
+  }
+  return null;
 }
 
 function emitBorderRadius(br: IRBorderRadius): string | null {

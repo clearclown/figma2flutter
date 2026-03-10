@@ -1,7 +1,7 @@
 import { IRFrameNode, IRLayout, IRNode } from '../../ir/schema';
 import { tokenKeyToDartName } from '../../plugin/utils/color-utils';
 import { formatDart, indent } from '../dart-formatter';
-import { emitBoxShadows } from './container-emitter';
+import { emitBoxShadows, emitGradient } from './container-emitter';
 
 export interface FlexEmitterConfig {
   colorClassName: string;
@@ -186,10 +186,19 @@ function wrapInContainer(
 
   // Decoration
   const decorProps: string[] = [];
-  const solidFill = node.style.fills.find(f => f.type === 'SOLID' && f.colorRef);
-  if (solidFill?.colorRef) {
-    const colorName = tokenKeyToDartName(solidFill.colorRef);
-    decorProps.push(`    color: ${colorClassName}.${colorName},`);
+  const gradientFill = node.style.fills.find(
+    f => (f.type === 'LINEAR_GRADIENT' || f.type === 'RADIAL_GRADIENT') &&
+      f.gradientStops && f.gradientStops.length > 0,
+  );
+  if (gradientFill) {
+    const gradientCode = emitGradient(gradientFill, { colorClassName });
+    decorProps.push(`    gradient: ${gradientCode},`);
+  } else {
+    const solidFill = node.style.fills.find(f => f.type === 'SOLID' && f.colorRef);
+    if (solidFill?.colorRef) {
+      const colorName = tokenKeyToDartName(solidFill.colorRef);
+      decorProps.push(`    color: ${colorClassName}.${colorName},`);
+    }
   }
 
   const br = node.style.borderRadius;
